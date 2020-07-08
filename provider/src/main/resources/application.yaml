@@ -1,0 +1,15 @@
+server:
+  port: 8084
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
+    #如果你的spring-rabbit版本小于2.1则使用下面的配置
+    #spring.rabbitmq.publisherConfirms=true
+    #发送者消息确认方式，默认为none，即不需要确认回调
+    publisher-confirm-type: correlated
